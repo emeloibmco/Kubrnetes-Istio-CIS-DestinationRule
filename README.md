@@ -31,7 +31,7 @@ Ingrese a su instancia de *IBM® Cloud Internet Services* y acceda a la pestaña
 Dé clic en crear y posteriormente active la opción de ```Proxy``` para habilitar el tráfico a través de CIS y aplicar las normas que serán agregadas a los security groups
 
 <br />
-<p align="center"><img width="600" src="https://github.com/emeloibmco/Kubrnetes-Istio-CIS-DestinationRule/tree/main/img/DNSsubdominio.png"></p>
+<p align="center"><img width="600" src="https://github.com/emeloibmco/Kubrnetes-Istio-CIS-DestinationRule/blob/main/img/DNSsubdominio.png"></p>
 <br />
 
 ## Aplicación de reglas
