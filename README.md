@@ -43,6 +43,15 @@ Para ver los gateways use el siguiente comando:
 ```
 kubectl get gateways
 ```
+<p align="center"><img width="600" src="img/gateway.png"></p>
+Luego tenga en cuenta el nombre del gateway y ejecute el siguiente comando:
+
+```
+kubectl describe gateway <nombre_del_gateway>
+```
+<p align="center"><img width="600" src="img/describe-gtw.png"></p>
+
+Asegurese que el apartado subrayado este como en la imagen.
 
 ## Referencias :mag:
 * <a href="https://istio.io/latest/docs/reference/config/networking/gateway/#Gateway"> Istio Gateway</a>
