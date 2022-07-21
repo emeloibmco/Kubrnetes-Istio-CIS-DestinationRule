@@ -1,6 +1,6 @@
 # Kubernetes-Istio-CIS-DestinationRule:shield:
 
-*istio* es una malla de servicios dedicada a asegurar la comunicación entre microservicios de forma rápida, segura y confiable. Para ello incluye servicios de traffic management, security y observability.
+*Istio* es una malla de servicios dedicada a asegurar la comunicación entre microservicios de forma rápida, segura y confiable. Para ello incluye servicios de traffic management, security y observability.
 
 La presente guía esta enfocada en realizar las configuraciones necesarias para gestionar el tráfico de entrada y salida a un Virtual Server de infraestructura clásica para permitir únicamente el tráfico proveniente de *IBM® Cloud Internet Services*. De esta forma se asegura que todas las entradas al Virtual Server pasen por la seguridad proveída por *IBM® Cloud Internet Services*. Para esta configuración se usará el Ingress Gateway de *Istio*. Sin embargo, también es posible realizarlo usando <a href="https://github.com/emeloibmco/IBM-Cloud-Internet-Services-Security-Groups"> *IBM® Cloud Security Groups* </a>
 
