@@ -1,6 +1,6 @@
 # Kubernetes-Istio-CIS-DestinationRule:shield:
 
-*istio* es ...
+*istio* es una malla de servicios dedicada a asegurar la comunicación entre microservicios de forma rápida, segura y confiable. Para ello incluye servicios de traffic management, security y observability.
 
 La presente guía esta enfocada en realizar las configuraciones necesarias para gestionar el tráfico de entrada y salida a un Virtual Server de infraestructura clásica para permitir únicamente el tráfico proveniente de *IBM® Cloud Internet Services*. De esta forma se asegura que todas las entradas al Virtual Server pasen por la seguridad proveída por *IBM® Cloud Internet Services*. Para esta configuración se usará el Ingress Gateway de *Istio*. Sin embargo, también es posible realizarlo usando <a href="https://github.com/emeloibmco/IBM-Cloud-Internet-Services-Security-Groups"> *IBM® Cloud Security Groups* </a>
 
@@ -43,9 +43,9 @@ Finalmente, para aplicar las reglas establecidas en los security groups, ingrese
 <br />
 
 ## Referencias :mag:
-* <a href="https://www.ibm.com/cloud/blog/network-security-groups"> IBM Cloud Security Groups</a>
+* <a href="https://istio.io/latest/docs/reference/config/networking/gateway/#Gateway"> Istio Gateway</a>
 
-* <a href="https://cloud.ibm.com/docs/containers?topic=containers-firewall"> Classic: Opening required ports and IP addresses in your firewall</a>
+* <a href="https://cloud.ibm.com/docs/cis?topic=cis-get-started-new-subdomain"> IBM Cloud Internet Services new subdomain</a>
 
 
 <br />
