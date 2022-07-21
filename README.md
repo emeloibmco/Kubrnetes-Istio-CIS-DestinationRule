@@ -64,7 +64,29 @@ kubectl get virtual services
 
 Tenga en cuenta que el apartado de gateways hace referencia sobre que gateway se ejecutara el virtual service.
 
-Para permitir que el trafico unicamente entre por nuestro dominio deberemos copiar el contenido de la virtual service existente en la malla y editar los siguientes parametros.
+Para permitir que el trafico unicamente entre por nuestro dominio deberemos copiar el contenido de la virtual service existente en la malla y va editar los siguientes parametros.
+
+<p align="center"><img width="600" src="img/mod-vs.png"></p>
+
+En el apartado de host debera incluir todos aquellos dominios, subdominios o IPs que tienen permitido enviar trafico a la malla a traves del gateway.
+
+Luego el gateway debera ser el nombre del gateway sobre el cual desea aplicar el virtual service.
+
+
+Finalmente debera aplicar el virtual service de la siguiente manera:
+
+```
+kubectl apply -f <nombre-de-su-yaml.yaml>
+```
+<p align="center"><img width="600" src="img/apply-yaml.png"></p>
+
+Ahora el trafico estara restringido a los subdominios registrados. Si hacemos la prueba podemos observar que el trafico solo es permitido a traves de los subdominios y no la IP del cluster.
+
+<p align="center"><img width="600" src="img/test.png"></p>
+
+Si intenta acceder con la IP la petición fallara como se muestra a continuación:
+
+<p align="center"><img width="600" src="img/test.png"></p>
 
 
 
