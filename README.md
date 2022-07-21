@@ -86,7 +86,7 @@ Ahora el trafico estara restringido a los subdominios registrados. Si hacemos la
 
 Si intenta acceder con la IP la petición fallara como se muestra a continuación:
 
-<p align="center"><img width="600" src="img/test.png"></p>
+<p align="center"><img width="600" src="img/test2.png"></p>
 
 
 
