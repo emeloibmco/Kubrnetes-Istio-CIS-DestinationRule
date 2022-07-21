@@ -31,12 +31,12 @@ Ingrese a su instancia de *IBM® Cloud Internet Services* y acceda a la pestaña
 Dé clic en crear y posteriormente active la opción de ```Proxy``` para habilitar el tráfico a través de CIS y aplicar las normas que serán agregadas a los security groups
 
 <br />
-<p align="center"><img width="600" src="https://github.com/emeloibmco/Kubrnetes-Istio-CIS-DestinationRule/blob/main/img/DNSsubdominio.png"></p>
+<p align="center"><img width="600" src="https://github.com/emeloibmco/IBM-Cloud-Internet-Services-Security-Groups/blob/main/Images/DNSsubdominio.png"></p>
 <br />
 
 ## Aplicación de reglas
 
-Luego de configurar los subdominios deberá configurar el gateway de Istio. Desde la consola podra observar la configuración predeterminada del gateway de Istio.
+Luego de configurar los subdominios debera configurar el gateway de Istio. Desde la consola podra observar la configuración predeterminada del gateway de Istio.
 
 Para ver los gateways use el siguiente comando:
 
@@ -51,7 +51,22 @@ kubectl describe gateway <nombre_del_gateway>
 ```
 <p align="center"><img width="600" src="img/describe-gtw.png"></p>
 
-Asegúrese que el apartado subrayado esté como en la imagen.
+Asegurese que el apartado subrayado este como en la imagen.
+
+Despues debera verificar si existen virtual services dentro de istio. El virtual service le permitira gestionar el trafico que entre al service mesh a traves del gateway.
+
+Para verificar si existen virtual services en la malla ejecute:
+
+``` 
+kubectl get virtual services
+```
+<p align="center"><img width="600" src="img/vs.png"></p>
+
+Tenga en cuenta que el apartado de gateways hace referencia sobre que gateway se ejecutara el virtual service.
+
+Para permitir que el trafico unicamente entre por nuestro dominio deberemos copiar el contenido de la virtual service existente en la malla y editar los siguientes parametros.
+
+
 
 ## Referencias :mag:
 * <a href="https://istio.io/latest/docs/reference/config/networking/gateway/#Gateway"> Istio Gateway</a>
