@@ -36,11 +36,13 @@ Dé clic en crear y posteriormente active la opción de ```Proxy``` para habilit
 
 ## Aplicación de reglas
 
-Finalmente, para aplicar las reglas establecidas en los security groups, ingrese al menú desplegable de la izquierda y acceda a su clúster de kubernetes, en el menú de la izquierda dé clic en ```Worker Nodes``` y seleccione todos los nodos de su clúster, finalmente, dé clic en ```Reboot``` para reiniciar los nodos del clúster y aplicar las reglas incluidas en los security groups.
+Luego de configurar los subdominios debera configurar el gateway de Istio. Desde la consola podra observar la configuración predeterminada del gateway de Istio.
 
-<br />
-<p align="center"><img width="600" src="https://github.com/emeloibmco/IBM-Cloud-Internet-Services-Security-Groups/blob/main/Images/nodosk8s.PNG"></p>
-<br />
+Para ver los gateways use el siguiente comando:
+
+```
+kubectl get gateways
+```
 
 ## Referencias :mag:
 * <a href="https://www.ibm.com/cloud/blog/network-security-groups"> IBM Cloud Security Groups</a>
@@ -49,7 +51,6 @@ Finalmente, para aplicar las reglas establecidas en los security groups, ingrese
 
 
 <br />
-
 
 ## Autores :black_nib:
 Equipo IBM Cloud Tech Sales Colombia.
