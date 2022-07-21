@@ -36,7 +36,7 @@ Dé clic en crear y posteriormente active la opción de ```Proxy``` para habilit
 
 ## Aplicación de reglas
 
-Luego de configurar los subdominios debera configurar el gateway de Istio. Desde la consola podra observar la configuración predeterminada del gateway de Istio.
+Luego de configurar los subdominios debera configurar el gateway de Istio. Desde la consola podrá observar la configuración predeterminada del gateway de Istio.
 
 Para ver los gateways use el siguiente comando:
 
@@ -51,9 +51,9 @@ kubectl describe gateway <nombre_del_gateway>
 ```
 <p align="center"><img width="600" src="img/describe-gtw.png"></p>
 
-Asegurese que el apartado subrayado este como en la imagen.
+Asegúrese que el apartado subrayado esté como en la imagen.
 
-Despues debera verificar si existen virtual services dentro de istio. El virtual service le permitira gestionar el trafico que entre al service mesh a traves del gateway.
+Despues deberá verificar si existen virtual services dentro de istio. El virtual service le permitirá gestionar el tráfico que entre al service mesh a través del gateway.
 
 Para verificar si existen virtual services en la malla ejecute:
 
@@ -62,15 +62,15 @@ kubectl get virtual services
 ```
 <p align="center"><img width="600" src="img/vs.png"></p>
 
-Tenga en cuenta que el apartado de gateways hace referencia sobre que gateway se ejecutara el virtual service.
+Tenga en cuenta que el apartado de gateways hace referencia sobre qué gateway se ejecutará el virtual service.
 
-Para permitir que el trafico unicamente entre por nuestro dominio deberemos copiar el contenido de la virtual service existente en la malla y va editar los siguientes parametros.
+Para permitir que el tráfico únicamente entre por nuestro dominio deberemos copiar el contenido de la virtual service existente en la malla y editar los siguientes parámetros.
 
 <p align="center"><img width="600" src="img/mod-vs.png"></p>
 
-En el apartado de host debera incluir todos aquellos dominios, subdominios o IPs que tienen permitido enviar trafico a la malla a traves del gateway.
+En el apartado de host deberá incluir todos aquellos dominios, subdominios o IPs que tienen permitido enviar tráfico a la malla a través del gateway.
 
-Luego el gateway debera ser el nombre del gateway sobre el cual desea aplicar el virtual service.
+Luego el gateway deberá ser el nombre del gateway sobre el cuál desea aplicar el virtual service.
 
 
 Finalmente debera aplicar el virtual service de la siguiente manera:
@@ -80,7 +80,7 @@ kubectl apply -f <nombre-de-su-yaml.yaml>
 ```
 <p align="center"><img width="600" src="img/apply-yaml.png"></p>
 
-Ahora el trafico estara restringido a los subdominios registrados. Si hacemos la prueba podemos observar que el trafico solo es permitido a traves de los subdominios y no la IP del cluster.
+Ahora el tráfico estará restringido a los subdominios registrados. Si hacemos la prueba podemos observar que el tráfico sólo es permitido a través de los subdominios y no la IP del cluster.
 
 <p align="center"><img width="600" src="img/test.png"></p>
 
