@@ -68,6 +68,37 @@ Para permitir que el trafico unicamente entre por nuestro dominio deberemos copi
 
 <p align="center"><img width="600" src="img/mod-vs.png"></p>
 
+Code snippet:
+```YAML
+apiVersion: networking.istio.io/v1beta1
+kind: VirtualService
+metadata:
+  name: bookinfo
+spec:
+  hosts:
+  - test.asab.website
+  - bookinfo.asab.website
+  gateways:
+  - bookinfo-gateway
+  http:
+  - match:
+    - uri:
+        exact: /productpage
+    - uri:
+        prefix: /static
+    - uri:
+        exact: /login
+    - uri:
+        exact: /logout
+    - uri:
+        prefix: /api/v1/products
+    route:
+    - destination:
+        host: productpage
+        port:
+          number: 9080 
+```
+
 En el apartado de host debera incluir todos aquellos dominios, subdominios o IPs que tienen permitido enviar trafico a la malla a traves del gateway.
 
 Luego el gateway debera ser el nombre del gateway sobre el cual desea aplicar el virtual service.
