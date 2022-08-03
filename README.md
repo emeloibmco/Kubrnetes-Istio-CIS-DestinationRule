@@ -51,6 +51,24 @@ kubectl describe gateway <nombre_del_gateway>
 ```
 <p align="center"><img width="600" src="img/describe-gtw.png"></p>
 
+Code snippet:
+
+``` YAML
+apiVersion: networking.istio.io/v1beta1
+kind: Gateway
+metadata:
+  name: bookinfo-gateway
+spec:
+  selector:
+    istio: ingressgateway # use istio default controller
+  servers:
+  - port:
+      number: 80
+      name: http
+      protocol: HTTP
+    hosts:
+    - "*"
+``` 
 Asegúrese que el apartado subrayado esté como en la imagen.
 
 Despues deberá verificar si existen virtual services dentro de istio. El virtual service le permitirá gestionar el tráfico que entre al service mesh a través del gateway.
